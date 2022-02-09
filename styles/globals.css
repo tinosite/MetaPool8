@@ -17,7 +17,7 @@ a {
   box-sizing: border-box;
 }
 .navbar{
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
@@ -33,32 +33,29 @@ a {
 
 }
 
-.nav-item{
+.nav-link{
   display: inline-block;
   width:max-content;
-  color: white;
-}
-.nav-item .nav-link{
-  color:aliceblue;
-  font-family: share tech;
+  color:aliceblue !important;
+  font-family: share tech !important;
   font-weight: bolder;
   font-size: 1.1rem;
-
   padding-top : 0rem;
   padding-bottom : 0rem;
+  
 }
-.navbar-nav li{
-  padding: 0.2rem;
-}
-.navbar-nav li:hover a{
+
+
+.nav-link:hover a{
   color:#4186ec;
 }
-.navbar-nav [active="true"]{
+
+.nav-link.active{
   border-bottom-left-radius: 1rem;
   border: 5px solid #00d1ff;
   border-top-right-radius: 1rem;
 }
-.navbar-nav li:not([active="true"]){
+.nav-link:not(.active){
   margin-top:5px;
 }
 main{
