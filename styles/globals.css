@@ -68,3 +68,28 @@ main{
   position: absolute;
   z-index:-1;
 }
+
+.nav-link{
+  padding: 0  1vw !important;
+  margin: 0 1vw 0 1vw !important;
+  font-size:1rem
+} 
+.nav-link:not(.active){
+  margin-top: 5px !important;
+}
+@media (min-width: 900px){
+  .nav-link{
+    padding: 0 1.5vw !important;
+    margin: auto 1.5vw !important;
+  } 
+}
+@media (max-width:767px){
+  .navbar {
+    left: unset !important;
+    transform: unset !important;
+    right : 1rem;
+    top : 1rem;
+    background: rgba(255, 255, 255, 0.5);
+ 
+  }
+}
