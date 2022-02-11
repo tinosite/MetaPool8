@@ -17,11 +17,7 @@ a {
   box-sizing: border-box;
 }
 .navbar{
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  border: 1px solid rgba(255, 255, 255, 0.13);
+
   position: fixed;
   top:2.5rem;
   left: 50%;
@@ -92,4 +88,22 @@ main{
     background: rgba(255, 255, 255, 0.5);
  
   }
+}
+.Section1_title{
+  font-size:8vw;
+  font-family: Scheherazade New;
+  color:#F2AE3F;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #DFD5B5;
+}
+.Section1_logo{
+  margin: auto;
+}
+
+[glass]{
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
 }

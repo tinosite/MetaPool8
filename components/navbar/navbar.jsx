@@ -5,7 +5,7 @@ import NavLink  from './NavLink'
 
 export default function Navbar() {
   return (
-    <Nb expand="md" >
+    <Nb expand="md" {...{glass:""}}>
     <Container fluid>
       <Nb.Toggle aria-controls="navbarScroll" />
       <Nb.Collapse id="navbarScroll">
