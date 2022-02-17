@@ -79,7 +79,7 @@ main{
     margin: auto 1.5vw !important;
   } 
 }
-@media (max-width:767px){
+@media (max-width:768px){
   .navbar {
     left: unset !important;
     transform: unset !important;
@@ -106,4 +106,72 @@ main{
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
   border: 1px solid rgba(255, 255, 255, 0.13);
+}
+@media (max-width:768px){
+  #section1_description{
+    width: 75vw !important;
+  }
+  #section1_description p{
+    font-size:1.5rem!important;
+  }
+  #section1_description .row p{
+    font-size:1rem!important;
+  }
+  .section1-description-btn{
+    font-size: 20px !important;
+    height: 7vh !important;
+    width: 33vw!important;
+  }
+  #section1_description_btns{
+    width: 75vw !important;
+  }
+}
+.section1-description-btn{
+  font-family:Share Tech;
+  font-size:2.5vw;
+  color:#F2AE3F;
+  background-color:#47769D;
+  border:.2rem solid #FFCC33;
+  width:22vw;
+  height:10vh;
+  border-top-left-radius : 3rem;
+}
+.section3-lable{
+  display: flex;
+  align-items: center;
+  margin: 0px -20px 0px 0px;
+}
+.section3-lable lable{
+  height: 3.5vw;
+  width: 90%;
+  text-align: center;
+  color: white;
+  font-family: Share Tech;
+  font-size: 2vw;
+  padding-top: .25vw;
+}
+.section3-lable-left{
+  justify-content: start;
+  margin:0px 0px 0px -1vw;
+  border-radius: 1vw;
+
+}
+
+.section3-lable-right{
+  justify-content: end;
+  margin:0px -1vw 0px 0px;
+}
+.section3-lable-left lable{
+  border-top-right-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+  background: radial-gradient(ellipse at top, #FFFFFF7D, transparent),radial-gradient(ellipse at center, #FFF0, transparent), radial-gradient(ellipse at bottom, #FFF0, transparent);
+  border: 2px solid;
+  border-color: #BCB1C4 #AD8BD8 #985FE7 #AD8BD8;
+}
+.section3-lable-right lable{
+  border-top-left-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+  background: radial-gradient(ellipse at top, #FFFFFF7D, transparent),radial-gradient(ellipse at center, #FFF0, transparent), radial-gradient(ellipse at bottom, #FFF0, transparent);
+  border: 2px solid;
+  border-color: #BCB1C4 #AD8BD8 #985FE7 #AD8BD8;
 }
