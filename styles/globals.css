@@ -175,3 +175,33 @@ main{
   border: 2px solid;
   border-color: #BCB1C4 #AD8BD8 #985FE7 #AD8BD8;
 }
+
+@media (max-width:768px){
+  .ms-row{
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .section3-lable-left {
+    margin: 0px !important;
+    width: 15vw;
+    margin: auto !important;
+    justify-content: center;
+  }
+  .section3-lable-right {
+    margin: 0px !important;
+    justify-content: center;
+    width: 15vw;
+    margin: auto !important;   
+  }
+  .section3-lable-left lable{
+    border-radius: 1vw;
+  }
+  .section3-lable-right lable{
+    border-radius: 1vw;
+  }
+}
