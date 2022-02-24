@@ -6,7 +6,7 @@ import styles from './Section3.module.scss'
 export default function Section3() {
   return (
         <>
-            <main className={styles.Section}>
+            <section className={styles.Section}>
                 <Container>
                     <Row className={styles.Section3ContentContainer}>
                         <Col className="col-md-3 ms-row" >
@@ -42,7 +42,7 @@ export default function Section3() {
                         </Col>
                     </Row>
                 </Container>
-            </main>
+            </section>
         </>
   )
 }

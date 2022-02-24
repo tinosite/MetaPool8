@@ -6,11 +6,11 @@ import styles from '../../styles/Home.module.scss'
 
 export default function Section1() {
   return (
-        <>
-            <video playsInline={true} autoPlay={true} muted loop id="myVideo">
-                <source src="/first_page_background.mp4" type="video/mp4"/>
-            </video>      
-            <main className={styles.Section1}>
+        <>    
+            <section className={styles.Section1}>
+                <video playsInline={true} autoPlay={true} muted loop id="myVideo">
+                    <source src="/first_page_background.mp4" type="video/mp4"/>
+                </video>  
                 <Container>
                     <Row >
                         <Col class="col-2 m-auto" style={{padding:"0 !important",margin:"auto 0 !important",width:"auto !important"}}>
@@ -46,7 +46,7 @@ export default function Section1() {
                         <input value="whitepaper" type="button" className="section1-description-btn" style={{borderBottomRightRadius : "3rem",borderTopLeftRadius:"unset !important"}}/>
                     </Row>
                 </Container>
-            </main>
+            </section>
         </>
   )
 }
