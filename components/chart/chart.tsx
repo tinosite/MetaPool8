@@ -7,9 +7,11 @@ const data=[
     { MarketShare: 8, Company: "Lighting", Summary:"Lighting 8%", },
     { MarketShare: 18, Company: "Other Services", Summary:"Other Services 18%", },
 ]
-@Injectable()
 export default function PieChartExplosion () {
     return(<IgrPieChart dataSource={data}
+                textStyle="font-size:5rem;"
+                
+                sliceClick={(s,e)=>{e.isExploded = !e.isExploded;}}
                 labelMemberPath="Summary"
                 valueMemberPath="MarketShare"
                 width="100%"

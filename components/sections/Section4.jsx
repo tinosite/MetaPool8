@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
-import PieChartExplosion from "../chart/chart";
 import styles from './Section4.module.scss'
+import dynamic from 'next/dynamic'
 const LeftItems = (prop)=>{
     return(<div className="col-sm-6 center-on-sm">
         <div className={[styles.LeftItem_title,"row"].join(" ")}><lable>{prop.title}</lable></div>
@@ -9,7 +9,10 @@ const LeftItems = (prop)=>{
         </div>
     </div>)
 }
+//<PieChartExplosion></PieChartExplosion> 
+//
 export default function Section4() {
+    const PieChartExplosion = dynamic(() => import('../chart/chart'))
     return (<section className={styles.Section}>
             <Container>
                 <h3 className={styles.Section_title}>Tokenomics</h3>
@@ -21,8 +24,7 @@ export default function Section4() {
                             <LeftItems title="Blockchain network" innerDetail="polygon"></LeftItems>
                         </Col>
                         <Col md={8} className={"px-0"} style={{justifyContent: 'center', display: 'flex'}}>
-                            //<img className={styles.PieChart} src="./image/Section4PieChart.png"></img>
-                            <PieChartExplosion></PieChartExplosion> 
+                        <img className={styles.PieChart} src="./image/Section4PieChart.png"></img>
                         </Col>
                     </Row>
             </Container>
