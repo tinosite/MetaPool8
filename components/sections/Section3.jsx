@@ -9,7 +9,7 @@ export default function Section3() {
             <section className={styles.Section}>
                 <Container>
                     <Row className={styles.Section3ContentContainer}>
-                        <Col className="col-md-3 ms-row" >
+                        <Col className="col-md-3 sm-row" >
                             <Row className={"col"}>
                                 <div className={[styles.PlayToEarn,"col-md-4 mx-0"].join(" ")}></div>
                                 <div className="col-md-8 section3-lable p-0 section3-lable-left" ><lable glass="true">Play to earn</lable></div>
@@ -24,9 +24,9 @@ export default function Section3() {
                             </Row>
                         </Col>
 
-                        <Col className={[styles.Section3MidImage,"col-mid-6 ms-row"].join(" ")}></Col>
+                        <Col className={[styles.Section3MidImage,"col-mid-6 sm-row"].join(" ")}></Col>
                         
-                        <Col className="col-md-3 ms-row" >
+                        <Col className="col-md-3 sm-row" >
                             <Row className={"col"} >
                                 <div className="col-md-8 section3-lable section3-lable-right p-0" ><lable glass="true">Trade</lable></div>
                                 <div className={[styles.Trade,"col-md-4 mx-0"].join(" ")}></div>

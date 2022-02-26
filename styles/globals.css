@@ -178,7 +178,7 @@ main{
 }
 
 @media (max-width:768px){
-  .ms-row{
+  .sm-row{
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
@@ -204,5 +204,9 @@ main{
   }
   .section3-lable-right lable{
     border-radius: 1vw;
+  }
+  .center-on-sm{
+    justify-content: center;
+    display: grid;
   }
 }
