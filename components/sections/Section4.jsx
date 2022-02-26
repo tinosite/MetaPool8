@@ -9,11 +9,12 @@ const LeftItems = (prop)=>{
         </div>
     </div>)
 }
+//const PieChartExplosion = dynamic(() => import('../chart/chart'))
 //<PieChartExplosion></PieChartExplosion> 
 //
 export default function Section4() {
-    const PieChartExplosion = dynamic(() => import('../chart/chart'))
     return (<section className={styles.Section}>
+            <img className={styles.Section4BackGround} src="./image/Section4Background.png"/>
             <Container>
                 <h3 className={styles.Section_title}>Tokenomics</h3>
                     <Row>

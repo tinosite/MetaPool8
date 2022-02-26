@@ -2,13 +2,20 @@ $imageSize:10vw;
 $imageMargin:3vh 0 ;
 
 .Section{
-    min-height: 100vh;
-    padding: 4rem 0;
-    flex: 1 1;
-    display: flex;
-    flex-direction: column;
-    background-image: url('/image/back3.png');
-  }
+  min-height: 100vh;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+}
+.Section3BackGround{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom right;
+  z-index: -1;
+}
+
 .Section3MidImage {
   background-image: url("/image/section3_mid_vertical.png");
   width: 100%;

@@ -7,6 +7,7 @@ export default function Section3() {
   return (
         <>
             <section className={styles.Section}>
+                <img src="/image/back3.png" className={styles.Section3BackGround}/>
                 <Container>
                     <Row className={styles.Section3ContentContainer}>
                         <Col className="col-md-3 sm-row" >

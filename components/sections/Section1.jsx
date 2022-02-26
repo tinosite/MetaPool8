@@ -8,10 +8,10 @@ export default function Section1() {
   return (
         <>    
             <section className={styles.Section1}>
-                <video playsInline={true} autoPlay={true} muted loop id="myVideo">
+                <video playsInline={true} autoPlay={true} muted loop id="myVideo" className={styles.Section1BackGround}>
                     <source src="/first_page_background.mp4" type="video/mp4"/>
                 </video>  
-                <Container>
+                <Container className={styles.Section1Container}>
                     <Row >
                         <Col class="col-2 m-auto" style={{padding:"0 !important",margin:"auto 0 !important",width:"auto !important"}}>
                             <img src="/image/logo.png" style={{position:"relative",height:"10vw",width:"10vw"}}/>
