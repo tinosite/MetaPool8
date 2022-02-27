@@ -1,0 +1,100 @@
+$imageSize:10vw;
+$imageMargin:3vh 0 ;
+
+.Section{
+    min-height: 100vh;
+    padding: 4rem 0;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/image/back3.png');
+  }
+.Section3MidImage {
+  background-image: url("/image/section3_mid_vertical.png");
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30vw;
+  margin-top: 9vh;
+}
+.PlayToEarn{
+  background-image: url("/image/PlayToEarn.png");
+  height: $imageSize;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: $imageMargin;
+  z-index: 2;
+}
+.GiftBox{
+  background-image: url("/image/GiftBox.png");
+  height: $imageSize;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: $imageMargin;
+  z-index: 2;
+}
+.Upgrade{
+  background-image: url("/image/Upgrade.png");
+  height: $imageSize;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: $imageMargin;
+  z-index: 2;
+}
+.Trade{
+  background-image: url("/image/Trade.png");
+  height: $imageSize;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: $imageMargin;
+  z-index: 2;
+}
+.Stake{
+  background-image: url("/image/Stake.png");
+  height: $imageSize;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: $imageMargin;
+  z-index: 2;
+}
+.NTF_Items{
+  background-image: url("/image/NTF_Items.png");
+  height: $imageSize;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: $imageMargin;
+  z-index: 2;
+}
+.Section3ContentContainer{
+  margin-top:1.5vh;
+
+}
+@media (max-width:768px){
+  .Section3MidImage{
+    background-image: url("/image/section3_mid_horizental.png");
+    margin-top:0;
+   
+  }
+  .Section3ContentContainer{
+    display:block;
+  }
+  .ms-row{
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Section3MidImage{
+    height: 60vw;
+  }
+}

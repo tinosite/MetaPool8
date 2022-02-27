@@ -1,0 +1,53 @@
+.Section{
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  background-image: url('/image/Section4Background.png');
+}
+.LeftItem_title{
+  font-family: Share Tech;
+  font-size:min(1.15vw, 1.5rem);
+  color: #FFFFFF;
+  opacity: 0.5;
+  margin-left: 0 !important;
+  margin-top:3vh ;
+}
+.LeftItem_innerDetail{
+  font-family: Share Tech;
+  font-size:min(2.1vw, 2rem);
+  color: #FFFFFF;
+  height: 4.5vw;
+  border-radius:1vw;
+  justify-content: center;
+  background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 13.58%, rgba(255, 255, 255, 0) 113.58%);
+  backdrop-filter: blur(42px);
+  max-width:300px !important;
+  margin-bottom:5vh;
+  max-height: 55px;
+}
+.Section_title{
+  justify-content: center;
+  display: grid;
+  font-family: Cubano;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 82px;
+  line-height: 98px;
+  color: #FFFFFF;
+}
+.PieChart{
+  max-width: 735px;
+  object-fit: contain;
+  width: 100%;
+}
+
+@media (max-width:768px) {
+  .LeftItem_innerDetail{
+    width: 20vw;
+    line-height: 4vh !important;
+    height: 4vh !important;
+  }
+}
