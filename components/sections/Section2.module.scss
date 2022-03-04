@@ -1,0 +1,127 @@
+.Section{
+    min-height: 100vh;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .Section2BackGround{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom right;
+    z-index: -1;
+  }
+
+  .Section2title{
+      color: #fff;
+      font-family: Cubano;
+      text-align: center;
+      margin-top: 2%;
+  }
+
+  .Section2title h2{
+      font-size:82px;
+  }
+  .Section2Glass{
+      height:70vh;
+      border-radius: 30px;;
+  }
+  .slide1image{
+      position:relative;
+  }
+  .slide1image img{
+    max-width: 600px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%;
+    margin-top:-95px;
+}
+.slide1text{
+    text-align: justify;
+    color: #FFFFFF;
+    padding:35px;
+}
+.slide1text h3{
+    color: #FFE767;
+    font-size:48px;
+    font-family: Cubano;
+    text-align: center;
+}
+.pageNavigation{
+    padding: 20px;
+}
+.section2PreBut button{
+    width: 6vw;
+    height: 5vh;
+    border-radius:0px 15px;
+    background-color:#0DF0FF;
+    border: 1px solid #0DF0FF;
+}
+.section2NextBut{
+    text-align: end;
+}
+.section2NextBut button{
+    width: 6vw;
+    height: 5vh;
+    border-radius:0px 15px;
+    background-color:#0DF0FF;
+    
+}
+.slideLine{
+    display:flex;
+    justify-content:space-between;
+    align-items: end;
+}
+.slideLine button{
+    height:0rem;
+    width:9rem;
+    background-color: #FFE767;
+}
+.slide2image{
+    position:relative;
+}
+.firstPlanets{
+    position:absolute;
+}
+.secondPlanets{
+    position:absolute;
+    text-align:end;
+}
+.venus img{
+    width:15rem;
+    margin:-2rem;
+}
+.earth img{
+    width:15rem;
+    margin:3rem;
+}
+.neptune img{
+    width:15rem;
+}
+.mercury img{
+    width:15rem;
+    margin-right: 3rem;
+}
+.saturn img{
+    width:15rem;
+    margin-right:-3rem;
+}
+.mars img{
+    width:15rem;
+    margin-right: 3rem;
+}
+.slide3image img{
+    
+    max-width:100%;
+    width:40rem;
+    margin-top: -6rem;
+   
+}
+.slide4image img{
+    
+    max-width:100%;
+    width:35rem;
+    margin-top: -4rem;
+   
+}
