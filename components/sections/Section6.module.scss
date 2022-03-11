@@ -1,0 +1,14 @@
+.Section{
+    min-height: 100vh;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .Section6BackGround{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom right;
+    z-index: -1;
+  }
