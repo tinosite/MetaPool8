@@ -1,14 +1,48 @@
-.Section{
-    min-height: 100vh;
-    flex: 1 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .Section6BackGround{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: bottom right;
-    z-index: -1;
-  }
+.Section {
+  min-height: 100vh;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+}
+.Section6BackGround {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom right;
+  z-index: -1;
+}
+.roadmap img {
+  position: relative;
+  max-width: 100%;
+  width: 80vw;
+  padding: 100px;
+  top: -25px;
+}
+.roadmap h1 {
+  position: relative;
+}
+.banner img {
+  max-width: 100%;
+  position: relative;
+}
+.Q2 {
+  width: 250px;
+  left: 4rem;
+  top: -42rem;
+}
+.Q3 {
+  width: 250px;
+  left: -2rem;
+  top: -42rem;
+}
+.Q4 {
+  width: 250px;
+  left: -13rem;
+  top: -52rem;
+}
+.Q1 {
+  width: 250px;
+  left: -19rem;
+  top: -51rem;
+}
