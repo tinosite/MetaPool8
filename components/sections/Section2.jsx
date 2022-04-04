@@ -5,7 +5,7 @@ import styles from './Section2.module.scss'
 export default function Section2() {
     return (
         <>
-            <section className={styles.Section}>
+            <section className={styles.Section} id="GamePlay">
                 <img src="/image/backslide2.jpg" className={styles.Section2BackGround} />
                 <Container>
                     <Row className={styles.Section2title}>

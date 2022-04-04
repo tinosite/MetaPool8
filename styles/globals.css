@@ -201,3 +201,43 @@ main{
     display: grid;
   }
 }
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.NTFScroll{
+  overflow-y: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  display: flex;
+  scroll-behavior:smooth;
+  height: 28vw;
+}
+.NTFScroll::-webkit-scrollbar{
+  display:none;
+}
+.NTFScroll .card{
+  margin-right: 5%;
+  margin-left: 5%;
+  width:20%;
+  flex-shrink: 0 !important;
+  transition:500ms linear;
+  background: none !important;
+}
+.NTFScroll .card:not([Active=true]){
+  height: max-content;
+}
+.NTFScroll .card[Active=true]{
+  width:30%;
+}
+.react-sweet-progress-symbol{
+  display: none !important;
+}
+.react-sweet-progress-line-inner{
+  min-height: .5vw !important;
+}
