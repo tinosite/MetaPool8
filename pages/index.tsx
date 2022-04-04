@@ -8,6 +8,8 @@ import Section4 from '../components/sections/Section4'
 import Section5 from '../components/sections/Section5'
 let LastChangeTime=0;
 let sectionIndex=0;
+import Section6 from '../components/sections/Section6'
+
 const Home: NextPage = () => {
   var Sections = ["Home", "GamePlay", "Section3"]
   const [scrollY, setScrollY] = useState(0);
@@ -40,6 +42,7 @@ const Home: NextPage = () => {
       <Section3></Section3>
       <Section4></Section4> */}
       <Section5></Section5>
+      <Section6></Section6>
 
     </>
   )
