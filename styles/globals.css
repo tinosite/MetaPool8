@@ -232,14 +232,26 @@ main{
   margin-left: 5%;
   width:20%;
   flex-shrink: 0 !important;
-  transition:500ms linear;
+  transition-timing-function: linear;
+  transition-delay: 250ms;
+  transition-duration:500ms;  
   background: none !important;
 }
+
 .NTFScroll .card:not([Active=true]){
   height: max-content;
 }
+
+.NTFScroll .card video{
+  transition-property: height;
+  transition-timing-function: linear;
+  transition-delay: 250ms;
+  transition-duration:500ms;
+}
+
 .NTFScroll .card[Active=true]{
   width:30%;
+  height: 40%;
 }
 .react-sweet-progress-symbol{
   display: none !important;

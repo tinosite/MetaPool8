@@ -42,7 +42,7 @@ export default function Section5() {
                         <h3 className={styles.Section_title}>NTF ITEMS</h3>
                     </Row>
                     <Row>
-                            <NTFScroll items={items}></NTFScroll>
+                        <NTFScroll items={items}></NTFScroll>
                     </Row>
                 </Container>
             </section>)

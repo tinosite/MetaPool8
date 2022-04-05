@@ -2,8 +2,17 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
-
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 class cardData{
+    constructor(_id,_VideoName,_orginalIndex,_Power,_Aim,_Time,_Spin){
+        this.id=_id;
+        this.VideoName=_VideoName;
+        this.orginalIndex=_orginalIndex;
+        this.Power=_Power;
+        this.Aim=_Aim;
+        this.Time=_Time;
+        this.Spin=_Spin;
+    }
     id=""
     VideoName=""
     active=false
@@ -13,27 +22,17 @@ class cardData{
     Time=0
     Spin=0
 }
+
 export default function NTFScroll({items}){
-    var allItems=items.map((value,index)=>{
-        var result = new cardData()
-        result.id = value.id
-        result.VideoName = value.VideoName
-        result.orginalIndex = index;
-        
-        result.Power = Math.floor(Math.random() * 100);
-        result.Aim = Math.floor(Math.random() * 100);
-        result.Time = Math.floor(Math.random() * 100);
-        result.Spin = Math.floor(Math.random() * 100);
-
-
-        return result;
-    });
+    var allItems=items.map((value,index)=> 
+        new cardData(value.id,value.VideoName,index,Math.floor(Math.random() * 100),
+                     Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100)));
    
     var temp = [].concat(allItems.slice(0,3));
     temp[1].active=true;
     
     const [Carditems, setCarditems] = React.useState(temp)
-    const [removeLast,SetRemoveLast] = React.useState(false);
+    const [removeLast,SetRemoveLast] = React.useState(0);
     const [ActiveItem,SetActiveItem] = React.useState(new cardData());
 
     const currentActive= () => Carditems.filter(x=>x.active)[0];
@@ -48,32 +47,36 @@ export default function NTFScroll({items}){
             item.active=false;
         })
         //+ | -
-        var temp = newValue[newValue.length-2];
-        temp.active=true;
-        newValue[newValue.length-2]=temp
+        newValue.forEach((v,i)=>{
+            if(i==newValue.length-2)
+                v.active=true;
+        });
+        
         setCarditems(newValue)
     }
-
-    React.useEffect(()=>{
-        setTimeout(() => {
-            if(Carditems.length>3){
-                Carditems.splice(0,1)
-                setCarditems(Carditems)
-            }
-        }, 100)
-
-    },[removeLast])
-
+    
     React.useEffect(()=>{
         SetActiveItem(currentActive());
     },[currentActive()])
 
-    const Next=()=>{
-        setActiveNTF(allItems[((currentActive().orginalIndex + 2 ) % allItems.length)])
-        SetRemoveLast(!removeLast)
+    React.useEffect(()=>{
+        console.log("useEffect")
         setTimeout(()=>{
+            console.log("scroll",removeLast)
             document.getElementsByClassName("NTFScroll")[0].scroll(Math.ceil((window.innerWidth * 26 / 100)) , 0);            
         },300)
+        setTimeout(() => {
+            console.log("delete",[].concat(removeLast==0?Carditems:Carditems.slice(1)))
+            setCarditems(()=>[].concat(removeLast==0?Carditems:Carditems.slice(1)))
+        },1000)
+
+    },[removeLast])
+
+
+    const Next=()=>{
+        console.log(currentActive())
+        setActiveNTF(allItems[((currentActive().orginalIndex + 2 ) % allItems.length)])
+        SetRemoveLast(removeLast+1)
     }
 
     const Previous=()=>{
@@ -96,7 +99,7 @@ export default function NTFScroll({items}){
                             style={{display: "inline-block"}}
                             className="card">
                             {/*autoPlay={true} playsInline={true} loop*/}
-                                <video   muted  id={"player" + VideoName} style={{width:"100%",height:"100%"}}>
+                                <video   muted  id={"player" + VideoName} style={{width:"100%"}}>
                                     <source src={"/NTFs/"+VideoName+".mp4"} type="video/mp4"/>
                                 </video>
                         </div>
