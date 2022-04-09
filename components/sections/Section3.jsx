@@ -6,7 +6,7 @@ import styles from './Section3.module.scss'
 export default function Section3() {
   return (
         <>
-            <section className={styles.Section}>
+            <section className={styles.Section} id="Section3">
                 <img src="/image/back3.png" className={styles.Section3BackGround}/>
                 <Container>
                     <Row className={styles.Section3ContentContainer}>

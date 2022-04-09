@@ -6,17 +6,17 @@ import styles from '../../styles/Home.module.scss'
 export default function Section1() {
   return (
         <>    
-            <section className={styles.Section1}>
+            <section className={styles.Section1} id="Home">
                 <video playsInline={true} autoPlay={true} muted loop id="myVideo" className={styles.Section1BackGround}>
                     <source src="/first_page_background.mp4" type="video/mp4"/>
                 </video>  
                 <Container className={styles.Section1Container}>
                     <Row >
-                        <Col class="col-2 m-auto" style={{padding:"0 !important",margin:"auto 0 !important",width:"auto !important"}}>
+                        <Col className="col-2 m-auto" style={{padding:"0 !important",margin:"auto 0 !important",width:"auto !important"}}>
                             <img src="/image/logo.png" style={{position:"relative",height:"10vw",width:"10vw"}}/>
                         </Col>
-                        <Col class="col-10">
-                            <span class="Section1_title">
+                        <Col className="col-10">
+                            <span className="Section1_title">
                                 Meta Pool8
                             </span>
                         </Col>
@@ -40,7 +40,7 @@ export default function Section1() {
                             </Row> */}
                         </div>
                     </Row>
-                    <Row id="section1_description_btns" style={{  width: "47vw",justifyContent:"space-between"}} class="row pt-5">
+                    <Row id="section1_description_btns" style={{  width: "47vw",justifyContent:"space-between"}} className="row pt-5">
                         <input value="Trade Now" type="button" className="section1-description-btn"/>
                         <input value="whitepaper" type="button" className="section1-description-btn" style={{borderBottomRightRadius : "3rem",borderTopLeftRadius:"unset !important"}}/>
                     </Row>

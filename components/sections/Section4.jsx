@@ -1,6 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
 import styles from './Section4.module.scss'
-import dynamic from 'next/dynamic'
 const LeftItems = (prop)=>{
     return(<div className="col-sm-6 center-on-sm">
         <div className={[styles.LeftItem_title,"row"].join(" ")}><lable>{prop.title}</lable></div>
@@ -9,11 +8,10 @@ const LeftItems = (prop)=>{
         </div>
     </div>)
 }
-//const PieChartExplosion = dynamic(() => import('../chart/chart'))
-//<PieChartExplosion></PieChartExplosion> 
-//
+
+
 export default function Section4() {
-    return (<section className={styles.Section}>
+    return (<section className={styles.Section} id="Tokenomics">
             <img className={styles.Section4BackGround} src="./image/Section4Background.png"/>
             <Container>
                 <h3 className={styles.Section_title}>Tokenomics</h3>
