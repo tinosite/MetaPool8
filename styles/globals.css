@@ -128,11 +128,19 @@ main{
   font-family:Share Tech;
   font-size:2.5vw;
   color:#F2AE3F;
-  background-color:#47769D;
+  background: #fc00ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   border:.2rem solid #FFCC33;
   width:22vw;
   height:10vh;
   border-top-left-radius : 3rem;
+}
+.section1-description-btn:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  transform: scale(0.9);
+  transition-duration: 0.5s;
 }
 .section3-lable{
   display: flex;
