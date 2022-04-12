@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import styles from './Section5.module.scss'
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { LeftArrow, RightArrow } from "../utils/arrows";
-import NTFScroll from "../utils/NTFScroll";
+import NTFScroll from "../utils/NTFScroll_2";
 
 import { Card } from "../utils/Card";
 

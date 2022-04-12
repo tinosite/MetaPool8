@@ -11,36 +11,36 @@ let sectionIndex=0;
 import Section6 from '../components/sections/Section6'
 
 const Home: NextPage = () => {
-  var Sections = ["Home", "GamePlay", "Section3","Tokenomics","NTF","roadmap"]
-  const [scrollY, setScrollY] = useState(0);
-  LastChangeTime=(new Date()).getTime();
-  const router = useRouter();
+  // var Sections = ["Home", "GamePlay", "Section3","Tokenomics","NTF","roadmap"]
+  // const [scrollY, setScrollY] = useState(0);
+  // LastChangeTime=(new Date()).getTime();
+  // const router = useRouter();
 
-  const getOffsetTop = (element:any):number => {
-    if (!element) return 0;
-    return getOffsetTop(element.offsetParent) + element.offsetTop;
-  };
+  // const getOffsetTop = (element:any):number => {
+  //   if (!element) return 0;
+  //   return getOffsetTop(element.offsetParent) + element.offsetTop;
+  // };
 
-  useEffect(() => {
-    const handleScroll = (e:any) => {
-      if ((new Date()).getTime() - LastChangeTime > 1000) {
-        LastChangeTime=(new Date()).getTime()
-        setScrollY(window.scrollY);
-        sectionIndex=(++sectionIndex)%Sections.length
+  // useEffect(() => {
+  //   const handleScroll = (e:any) => {
+  //     if ((new Date()).getTime() - LastChangeTime > 1000) {
+  //       LastChangeTime=(new Date()).getTime()
+  //       setScrollY(window.scrollY);
+  //       sectionIndex=(++sectionIndex)%Sections.length
 
-        // router.push(Sections[sectionIndex]);
+  //       // router.push(Sections[sectionIndex]);
 
-        window.scrollTo(0,getOffsetTop(document.querySelector("#"+Sections[sectionIndex])))
-      }
-    }
-    window.addEventListener("scroll", handleScroll);
-  }, [scrollY]);
+  //       window.scrollTo(0,getOffsetTop(document.querySelector("#"+Sections[sectionIndex])))
+  //     }
+  //   }
+  //   window.addEventListener("scroll", handleScroll);
+  // }, [scrollY]);
   return (
     <>
-      <Section1></Section1>
+      {/* <Section1></Section1>
       <Section2></Section2>
       <Section3></Section3>
-      <Section4></Section4>
+      <Section4></Section4> */}
       <Section5></Section5>
       <Section6></Section6>
 

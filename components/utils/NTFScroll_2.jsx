@@ -17,106 +17,108 @@ function sideScroll(element,direction,speed,step) {
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 class cardData{
-    constructor(_id,_VideoName,_orginalIndex,_Power,_Aim,_Time,_Spin){
+    constructor(_orginalId,_id,_VideoName,_orginalIndex,_Power,_Aim,_Time,_Spin){
         this.id=_id;
         this.VideoName=_VideoName;
-        this.orginalIndex=_orginalIndex;
         this.Power=_Power;
         this.Aim=_Aim;
         this.Time=_Time;
         this.Spin=_Spin;
+        this.orginalId=_orginalId;
     }
     id=""
+    orginalId=""
     VideoName=""
     active=false
-    orginalIndex=-1
     Power=0
     Aim=0
     Time=0
     Spin=0
 }
 
+
 export default function NTFScroll({items}){
-    var allItems=items.map((value,index)=> 
-        new cardData(value.id,value.VideoName,index,Math.floor(Math.random() * 100),
-                     Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100)));
-   
-    var temp = [].concat(allItems.slice(0,3));
-    temp[1].active=true;
+    var num=0;
+    let allItems= items.map((value,index)=> 
+    new cardData("NTF"+(++num),value.id,value.VideoName,index,Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100)));
     
-    const [Carditems, setCarditems] = React.useState(temp)
-    const [removeLast,SetRemoveLast] = React.useState(0);
-    const [ActiveItem,SetActiveItem] = React.useState(new cardData());
-
-    const currentActive= () => Carditems.filter(x=>x.active)[0];
-    const setActiveNTF=()=>{
-        var current = currentActive();
-        var newItem = allItems[(current.orginalIndex + 2 )%allItems.length];
-        var newValue=(Carditems.concat(newItem));
-        newValue.forEach(item=>{
-            if(item.ative){
-                current=item;
+    
+    var getcircleJob = ()=>{
+        var circleJob=[]
+        for (let x = 0; x < 3; x++) {
+            for (let y = 0; y < 4; y++) {
+                circleJob.push(Object.assign({},allItems[y]))
             }
-            item.active=false;
-        })
-        //+ | -
-        newValue.forEach((v,i)=>{
-            if(i==newValue.length-2)
-                v.active=true;
-        });
-        
-        setCarditems(newValue)
+        }
+        return [...circleJob];
     }
+    var firstR=JSON.parse(JSON.stringify(getcircleJob()));
+    var circle = JSON.parse(JSON.stringify(firstR));
+
+
+    let temp = [].concat(allItems.slice(0,3));
+    temp=[...[allItems[3]].concat(temp).concat([allItems[3]])]
+    temp[2].active=true;
+    temp[0]=Object.assign({},temp[0]);
+    temp[0].id="NTF-1"
+    const [Carditems,setCarditems] = React.useState(temp)
+    const [update,SetUpdate] = React.useState([0,""]);
+    const [ActiveItem,SetActiveItem] = React.useState(new cardData());
+    const [lastIndex,setlastIndex] = React.useState(4);
     
+    const findIndexInCircle=(item)=>{
+        for (let index = 3; index < circle.length; index++) {
+            if(item.VideoName==circle[index].VideoName){
+                return index;
+            }
+        }
+    }
     React.useEffect(()=>{
-        SetActiveItem(currentActive());
-    },[currentActive()])
-
-    React.useEffect(()=>{
-        console.log("useEffect")
-
-        sideScroll(document.getElementsByClassName("NTFScroll")[0],
-                    'right',
-                    10,
-                    Math.ceil((window.innerWidth * 26 / 100)));
-        
-        setTimeout(() => {
-            console.log("delete",[].concat(removeLast==0?Carditems:Carditems.slice(1)))
-            setCarditems(()=>[].concat(removeLast==0?Carditems:Carditems.slice(1)))
-        },1000)
-
-    },[removeLast])
-
-
+        var index=findIndexInCircle(ActiveItem)
+        var newval = JSON.parse(JSON.stringify(Carditems));
+        if(update[1]=="next"){
+            newval.shift();
+            newval.push(Object.assign({},circle[index+1]));
+            newval[4].id="NTF"+(lastIndex.toString());
+        }else if(update[1]=="prev"){
+            newval.pop();
+            newval=[(Object.assign({},circle[index+1]))].concat(newval);
+            newval[0].id="NTF"+(lastIndex.toString());
+        }
+        setCarditems(newval);
+    },[ActiveItem,lastIndex])
+    
     const Next=()=>{
-        console.log(currentActive())
-        setActiveNTF(allItems[((currentActive().orginalIndex + 2 ) % allItems.length)])
-        SetRemoveLast(removeLast+1)
+        SetActiveItem(Carditems[3]);
+        console.log("next")
+        setlastIndex(lastIndex+1)
+        SetUpdate([update+1,"next"]);
+        
     }
 
     const Previous=()=>{
-        // if(activeNTF+1 >= Carditems.length)
-        //     setActiveNTF(0);
-        // else
-        //     setActiveNTF(activeNTF+1);
-        // document.getElementsByClassName("NTFScroll")[0].scroll(Math.ceil((window.innerWidth * 26 / 100)) , 0)
+        SetActiveItem(Carditems[1]);
+        console.log("prev")
+        setlastIndex(lastIndex+1)
+        SetUpdate([update+1,"prev"]);
         
     }
     return(
         <>
             <div className="NTFScroll">
                 {
-                    Carditems.map(({ id , VideoName , active }) => (
+                    Carditems.map(({ id , VideoName },i) => (
                         <div
                             key={id}
                             id={id}
-                            active={active.toString()}
+                            active={(i==2).toString()}
                             style={{display: "inline-block"}}
                             className="card">
                                 <video 
-                                autoPlay={active} 
-                                playsInline={active} 
-                                
+                                autoPlay={i==2} 
+                                playsInline={i==2} 
+                                loop
                                 muted
                                 id={"player" + VideoName}
                                 style={{width:"100%"}}>
@@ -151,7 +153,7 @@ export default function NTFScroll({items}){
             </Row>
             <Row style={{justifyContent: "center"}}>
                 <div glass="true" style={{width: "40vw",borderRadius:"2rem",color:"white",fontSize:"min(1.25rem,2vw)",padding:"1rem"}}>
-                    <Row>
+                    {/* <Row>
                         <div className="col">
                             <span>Power</span>
                             <Progress percent={ActiveItem.Power} status="success" />
@@ -170,7 +172,7 @@ export default function NTFScroll({items}){
                             <span>Spin</span>
                                 <Progress percent={ActiveItem.Spin} status="success" />
                             </div>
-                    </Row>
+                    </Row> */}
                 </div>
             </Row>
         </>
