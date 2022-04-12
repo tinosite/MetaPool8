@@ -33,8 +33,6 @@ const getItems = () =>["blue","red","green","violet"].map((val, ind) => ({ id: g
 
 
 export default function Section5() {
-    const [items] = React.useState(getItems);
-    
     return (<section className={styles.Section} id="NTF">
                 <img src="./image/Section5BackGround.png" className={styles.Section5BackGround} />
                 <Container>
@@ -42,7 +40,7 @@ export default function Section5() {
                         <h3 className={styles.Section_title}>NTF ITEMS</h3>
                     </Row>
                     <Row>
-                        <NTFScroll items={items}></NTFScroll>
+                        <NTFScroll items={getItems()}></NTFScroll>
                     </Row>
                 </Container>
             </section>)

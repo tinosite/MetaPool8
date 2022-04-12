@@ -36,14 +36,17 @@ class cardData{
     Spin=0
 }
 
+
 export default function NTFScroll({items}){
-    var allItems=items.map((value,index)=> 
+    let canMove=true;
+    let allItems= items.map((value,index)=> 
         new cardData(value.id,value.VideoName,index,Math.floor(Math.random() * 100),
                      Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100)));
-   
-    var temp = [].concat(allItems.slice(0,3));
-    temp[1].active=true;
     
+    let temp = [].concat(allItems.slice(0,3));
+    temp[1].active=true;
+
+
     const [Carditems, setCarditems] = React.useState(temp)
     const [removeLast,SetRemoveLast] = React.useState(0);
     const [ActiveItem,SetActiveItem] = React.useState(new cardData());
@@ -83,12 +86,15 @@ export default function NTFScroll({items}){
         setTimeout(() => {
             console.log("delete",[].concat(removeLast==0?Carditems:Carditems.slice(1)))
             setCarditems(()=>[].concat(removeLast==0?Carditems:Carditems.slice(1)))
-        },1000)
+            canMove=true;
+        },500)
 
     },[removeLast])
 
 
     const Next=()=>{
+        if(!canMove) return;
+        canMove=false;
         console.log(currentActive())
         setActiveNTF(allItems[((currentActive().orginalIndex + 2 ) % allItems.length)])
         SetRemoveLast(removeLast+1)
@@ -151,7 +157,7 @@ export default function NTFScroll({items}){
             </Row>
             <Row style={{justifyContent: "center"}}>
                 <div glass="true" style={{width: "40vw",borderRadius:"2rem",color:"white",fontSize:"min(1.25rem,2vw)",padding:"1rem"}}>
-                    <Row>
+                    {/* <Row>
                         <div className="col">
                             <span>Power</span>
                             <Progress percent={ActiveItem.Power} status="success" />
@@ -170,7 +176,7 @@ export default function NTFScroll({items}){
                             <span>Spin</span>
                                 <Progress percent={ActiveItem.Spin} status="success" />
                             </div>
-                    </Row>
+                    </Row> */}
                 </div>
             </Row>
         </>
