@@ -26,18 +26,18 @@ export default function Section1() {
                             <p style={{fontSize:"1.8vw",fontFamily:"Share Tech",color:"white"}}>
                             Meta pool is an electronic game based on blockchain technology. You can join game tournaments and compete with other players and earn money.
                             </p>
-                            <p style={{fontSize:"1.7vw",marginTop:"2rem",fontFamily:"Share Tech",color:"#FFCC33"}}>
+                            <p style={{fontSize:"1.7vw",marginTop:"2rem",fontFamily:"Share Tech",color:"#cfa72d"}}>
                             #metaverse #NFT #Play_To_Earn #gamefi
                             </p>
-                            <p style={{fontSize:".85",fontFamily:"Share Tech",color:"white"}}>
+                            {/*<p style={{fontSize:".85",fontFamily:"Share Tech",color:"white"}}>
                             $THG Contract Address
                             </p>
-                            <Row>
+                             <Row>
                                 <p style={{marginLeft:".75rem",fontFamily:"roboto",fontSize:"1.2vw",border:"1px solid white",color:"#BDBABA",width:"auto"}}>
                                     BEP20</p>
                                 <p style={{fontFamily:"roboto",fontSize:"1.2vw",border:"1px solid white",color:"#BDBABA",width:"auto"}}>
                                     0x9fd87aefe02441b123c3c32466cd9db4c578618f</p>
-                            </Row>
+                            </Row> */}
                         </div>
                     </Row>
                     <Row id="section1_description_btns" style={{  width: "47vw",justifyContent:"space-between"}} className="row pt-5">
