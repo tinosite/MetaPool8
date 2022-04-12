@@ -17,14 +17,12 @@ export default function Navbar() {
           onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
         >
 
-          <Nav.Link href="#action1" className="active">Home</Nav.Link>
-          <Nav.Link href="#action2" className="">Video</Nav.Link>
-          <Nav.Link href="#action2" className="">Gameplay</Nav.Link>
-          <Nav.Link href="#action2" className="">Ntfs items</Nav.Link>
-          <Nav.Link href="#action2" className="">Metapool coin</Nav.Link>
-          <Nav.Link href="#action2" className="">Team</Nav.Link>
-          <Nav.Link href="#action2" className="">Roadmap</Nav.Link>
-
+          <Nav.Link href="#Home" className="active">Home</Nav.Link>
+          <Nav.Link href="#GamePlay" className="">GamePlay</Nav.Link>
+          <Nav.Link href="#Section3" className="">Section3</Nav.Link>
+          <Nav.Link href="#Tokenomics" className="">Tokenomics</Nav.Link>
+          <Nav.Link href="#NTF" className="">Metapool coin</Nav.Link>
+          <Nav.Link href="#roadmap" className="">Road map</Nav.Link>
         </Nav>
     </Nb.Collapse>
   </Container>

@@ -3,7 +3,7 @@ import styles from "./Section6.module.scss";
 
 export default function Section6() {
   return (
-    <section className={styles.Section}>
+    <section className={styles.Section} id="roadmap">
       <img src="./image/back6.jpg" className={styles.Section6BackGround} />
       <Container>
         <Row>

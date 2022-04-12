@@ -60,9 +60,6 @@ a {
 .nav-link:not(.active){
   margin-top:5px;
 }
-main{
-  background: url('/first_page_background.mp4');
-}
 .nav-link{
   padding: 0  1vw !important;
   margin: 0 1vw 0 1vw !important;

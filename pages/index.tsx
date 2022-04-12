@@ -11,7 +11,7 @@ let sectionIndex=0;
 import Section6 from '../components/sections/Section6'
 
 const Home: NextPage = () => {
-  var Sections = ["Home", "GamePlay", "Section3"]
+  var Sections = ["Home", "GamePlay", "Section3","Tokenomics","NTF","roadmap"]
   const [scrollY, setScrollY] = useState(0);
   LastChangeTime=(new Date()).getTime();
   const router = useRouter();
@@ -37,10 +37,10 @@ const Home: NextPage = () => {
   }, [scrollY]);
   return (
     <>
-      {/* <Section1></Section1>
+      <Section1></Section1>
       <Section2></Section2>
       <Section3></Section3>
-      <Section4></Section4> */}
+      <Section4></Section4>
       <Section5></Section5>
       <Section6></Section6>
 

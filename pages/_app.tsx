@@ -7,23 +7,6 @@ import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 
-const handExitComplete = (): void => {
-    if (typeof window !== 'undefined') {
-        const hashId = window.location.hash;
-        if (hashId) {
-            const element = document.querySelector(hashId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                    inline: 'nearest',
-                });
-            }
-        }
-    }
-};
-
-
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter();
     return (
@@ -40,9 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
                 crossOrigin="anonymous" />
 
-            <AnimatePresence exitBeforeEnter onExitComplete={handExitComplete}>
                 <Component {...pageProps} key={router.route} />
-            </AnimatePresence>
         </>
     );
 }

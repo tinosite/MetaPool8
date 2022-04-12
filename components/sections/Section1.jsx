@@ -8,7 +8,7 @@ export default function Section1() {
         <>    
             <section className={styles.Section1} id="Home">
                 <video playsInline={true} autoPlay={true} muted loop id="myVideo" className={styles.Section1BackGround}>
-                    <source src="/first_page_background.mp4" type="video/mp4"/>
+                    <source src="/first_page_background-c.mp4" type="video/mp4"/>
                 </video>  
                 <Container className={styles.Section1Container}>
                     <Row >
