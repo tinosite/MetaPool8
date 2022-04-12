@@ -258,6 +258,9 @@ background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, F
   width:30%;
   height: 40%;
 }
+/* .NTFScroll .card[far="true"]:not([Active=true]){
+  width:25%;
+} */
 .react-sweet-progress-symbol{
   display: none !important;
 }

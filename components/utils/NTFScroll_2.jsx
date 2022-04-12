@@ -79,11 +79,11 @@ export default function NTFScroll({items}){
         var newval = JSON.parse(JSON.stringify(Carditems));
         if(update[1]=="next"){
             newval.shift();
-            newval.push(Object.assign({},circle[index+1]));
+            newval.push(Object.assign({},circle[index+2]));
             newval[4].id="NTF"+(lastIndex.toString());
         }else if(update[1]=="prev"){
             newval.pop();
-            newval=[(Object.assign({},circle[index+1]))].concat(newval);
+            newval=[(Object.assign({},circle[index-2]))].concat(newval);
             newval[0].id="NTF"+(lastIndex.toString());
         }
         setCarditems(newval);
@@ -91,7 +91,6 @@ export default function NTFScroll({items}){
     
     const Next=()=>{
         SetActiveItem(Carditems[3]);
-        console.log("next")
         setlastIndex(lastIndex+1)
         SetUpdate([update+1,"next"]);
         
@@ -99,7 +98,6 @@ export default function NTFScroll({items}){
 
     const Previous=()=>{
         SetActiveItem(Carditems[1]);
-        console.log("prev")
         setlastIndex(lastIndex+1)
         SetUpdate([update+1,"prev"]);
         
@@ -113,6 +111,7 @@ export default function NTFScroll({items}){
                             key={id}
                             id={id}
                             active={(i==2).toString()}
+                            far={(i==0 || i==4).toString()}
                             style={{display: "inline-block"}}
                             className="card">
                                 <video 
@@ -153,7 +152,7 @@ export default function NTFScroll({items}){
             </Row>
             <Row style={{justifyContent: "center"}}>
                 <div glass="true" style={{width: "40vw",borderRadius:"2rem",color:"white",fontSize:"min(1.25rem,2vw)",padding:"1rem"}}>
-                    {/* <Row>
+                    <Row>
                         <div className="col">
                             <span>Power</span>
                             <Progress percent={ActiveItem.Power} status="success" />
@@ -172,7 +171,7 @@ export default function NTFScroll({items}){
                             <span>Spin</span>
                                 <Progress percent={ActiveItem.Spin} status="success" />
                             </div>
-                    </Row> */}
+                    </Row>
                 </div>
             </Row>
         </>
