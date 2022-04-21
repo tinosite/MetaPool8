@@ -2,21 +2,6 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
-let slideTimer;
-function sideScroll(element,direction,speed,step) {
-    console.log("scroll")
-    let scrollAmount = 0;
-    slideTimer = setInterval(() => {
-        if(direction == 'left'){
-            element.scrollLeft -= step;
-        } else {
-            element.scrollLeft += step;
-        }
-        scrollAmount += step;
-    }, speed);
-  } 
-
-const sleep = ms => new Promise(r => setTimeout(r, ms));
 class cardData{
     constructor(_orginalId,_id,_VideoName,_orginalIndex,_Power,_Aim,_Time,_Spin){
         this.id=_id;
@@ -44,7 +29,6 @@ export default function NTFScroll({items}){
     new cardData("NTF"+(++num),value.id,value.VideoName,index,Math.floor(Math.random() * 100),
     Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100)));
     
-    
     var getcircleJob = ()=>{
         var circleJob=[]
         for (let x = 0; x < 3; x++) {
@@ -56,8 +40,6 @@ export default function NTFScroll({items}){
     }
     var firstR=JSON.parse(JSON.stringify(getcircleJob()));
     var circle = JSON.parse(JSON.stringify(firstR));
-
-
     let temp = [].concat(allItems.slice(0,3));
     temp=[...[allItems[3]].concat(temp).concat([allItems[3]])]
     temp[2].active=true;
@@ -76,13 +58,9 @@ export default function NTFScroll({items}){
         }
     }
     React.useEffect(()=>{
-       
         var index = findIndexInCircle(ActiveItem)
         var newval = JSON.parse(JSON.stringify(Carditems));
-        setCarditems(newval);
-
-        setTimeout(()=>{
-            
+        setTimeout(()=>{        
             if(update[1]=="next"){
                 newval.shift();
                 newval.push(Object.assign({},circle[index+2]));
@@ -95,22 +73,19 @@ export default function NTFScroll({items}){
             setCarditems(newval);
         },200)
     },[ActiveItem,lastIndex])
-    const getSliderElement = ()=>document.getElementsByClassName("NTFScroll")[0];
+    
     const Next= ()=>{
         SetActiveItem(Carditems[3]);
-
         setlastIndex(lastIndex+1);
-        
         SetUpdate([update+1,"next"]);
-        
     }
 
     const Previous=()=>{
         SetActiveItem(Carditems[1]);
         setlastIndex(lastIndex+1)
         SetUpdate([update+1,"prev"]);
-        
     }
+
     return(
         <>
             <div className="NTFScroll">

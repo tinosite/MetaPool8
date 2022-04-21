@@ -3,6 +3,7 @@
   flex: 1 1;
   display: flex;
   flex-direction: column;
+  position:relative;
 }
 .Section6BackGround {
   position: absolute;
@@ -10,14 +11,16 @@
   width: 100%;
   object-fit: cover;
   object-position: bottom right;
-  z-index: -1;
+  z-index: -2;
 }
-.roadmap img {
-  position: relative;
-  max-width: 100%;
-  width: 80vw;
-  padding: 100px;
-  top: -25px;
+.roadmap_road{
+  margin-top: 50vh;
+  width: 50%;
+  object-fit: contain;
+  z-index: -1;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 .roadmap h1 {
   position: relative;
@@ -26,23 +29,74 @@
   max-width: 100%;
   position: relative;
 }
+.banner{
+  // width: 50vw !important;
+  // margin: auto;
+  margin-top: 56vh;
+  width: 40%;
+  object-fit: contain;
+  z-index: -1;
+  position: absolute;
+  left: 46%;
+  transform: translate(-50%,-50%);
+}
+
 .Q2 {
-  width: 250px;
-  left: 4rem;
-  top: -42rem;
+  margin-top: -5vh;
 }
 .Q3 {
-  width: 250px;
-  left: -2rem;
-  top: -42rem;
+  margin-top: -4vh;
 }
 .Q4 {
-  width: 250px;
-  left: -13rem;
-  top: -52rem;
+  margin-top: -20vh;
 }
 .Q1 {
-  width: 250px;
-  left: -19rem;
-  top: -51rem;
+  margin-top: -18vh;
+}
+
+@media (max-width: 1440px){
+  .Q2 {
+    margin-top: -7vh;
+  }
+  .Q3 {
+    margin-top: -6vh;
+  }
+}
+@media (max-width: 1024px){
+  .Q2 {
+    margin-top: -8vh;
+  }
+  .Q3 {
+    margin-top: -7vh;
+  }
+}
+@media (max-width: 768px){
+  .Q2 {
+    margin-top: -5vh;
+  }
+  .Q3 {
+    margin-top: -5vh;
+  }
+  .Q4 {
+    margin-top: -19vh;
+  }
+}
+@media (max-width: 425px){
+  .Q2 {
+    margin-top: -5vh;
+  }
+  .Q1 {
+    margin-top: -15vh;
+  }
+  .Q4 {
+    margin-top: -16vh;
+  }
+}
+@media (max-width: 320px){
+  .Q1 {
+    margin-top: -13vh;
+  }
+  .Q4 {
+    margin-top: -15vh;
+  }
 }
