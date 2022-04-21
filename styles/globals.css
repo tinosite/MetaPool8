@@ -267,3 +267,8 @@ background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, F
 .react-sweet-progress-line-inner{
   min-height: .5vw !important;
 }
+.NTFScroll .card[firstorlast=true]{
+  width:0!important;
+  margin: 0!important;
+  border: none !important;
+}

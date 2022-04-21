@@ -2,10 +2,11 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
+let slideTimer;
 function sideScroll(element,direction,speed,step) {
     console.log("scroll")
     let scrollAmount = 0;
-    var slideTimer = setInterval(() => {
+    slideTimer = setInterval(() => {
         if(direction == 'left'){
             element.scrollLeft -= step;
         } else {
@@ -75,23 +76,31 @@ export default function NTFScroll({items}){
         }
     }
     React.useEffect(()=>{
-        var index=findIndexInCircle(ActiveItem)
+       
+        var index = findIndexInCircle(ActiveItem)
         var newval = JSON.parse(JSON.stringify(Carditems));
-        if(update[1]=="next"){
-            newval.shift();
-            newval.push(Object.assign({},circle[index+2]));
-            newval[4].id="NTF"+(lastIndex.toString());
-        }else if(update[1]=="prev"){
-            newval.pop();
-            newval=[(Object.assign({},circle[index-2]))].concat(newval);
-            newval[0].id="NTF"+(lastIndex.toString());
-        }
         setCarditems(newval);
+
+        setTimeout(()=>{
+            
+            if(update[1]=="next"){
+                newval.shift();
+                newval.push(Object.assign({},circle[index+2]));
+                newval[4].id="NTF"+(lastIndex.toString());
+            }else if(update[1]=="prev"){
+                newval.pop();
+                newval=[(Object.assign({},circle[index-2]))].concat(newval);
+                newval[0].id="NTF"+(lastIndex.toString());
+            }
+            setCarditems(newval);
+        },200)
     },[ActiveItem,lastIndex])
-    
-    const Next=()=>{
+    const getSliderElement = ()=>document.getElementsByClassName("NTFScroll")[0];
+    const Next= ()=>{
         SetActiveItem(Carditems[3]);
-        setlastIndex(lastIndex+1)
+
+        setlastIndex(lastIndex+1);
+        
         SetUpdate([update+1,"next"]);
         
     }
@@ -113,6 +122,7 @@ export default function NTFScroll({items}){
                             active={(i==2).toString()}
                             far={(i==0 || i==4).toString()}
                             style={{display: "inline-block"}}
+                            firstorlast={(i==0 || i==4).toString()}
                             className="card">
                                 <video 
                                 autoPlay={i==2} 
