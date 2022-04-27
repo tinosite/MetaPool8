@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 class cardData{
@@ -47,7 +47,7 @@ export default function NTFScroll({items}){
     temp[0].id="NTF-1"
     const [Carditems,setCarditems] = React.useState(temp)
     const [update,SetUpdate] = React.useState([0,""]);
-    const [ActiveItem,SetActiveItem] = React.useState(new cardData());
+    const [ActiveItem,SetActiveItem] = React.useState(temp[3]);
     const [lastIndex,setlastIndex] = React.useState(4);
     
     const findIndexInCircle=(item)=>{
@@ -114,8 +114,8 @@ export default function NTFScroll({items}){
             </div>
             <Row style={{margin:"auto",width:"80%"}}>
                 <div className="col" style={{justifyContent:"space-between"}}>
-                    <button style={{width: "6rem",
-                                    height: "3rem",
+                    <button style={{width: "7vw",
+                                    height: "3.5vw",
                                     borderTopRightRadius: "1rem",
                                     borderBottomLeftRadius: "1rem",
                                     color: "white",
@@ -124,9 +124,9 @@ export default function NTFScroll({items}){
                             onClick={()=>Previous()}>Previous</button>
                 </div>
                 <div className="col">
-                    <button style={{width: "6rem",
+                    <button style={{width: "7vw",
                                     float: "right",
-                                    height: "3rem",
+                                    height: "3.5vw",
                                     borderTopLeftRadius: "1rem",
                                     borderBottomRightRadius: "1rem",
                                     color: "white",
