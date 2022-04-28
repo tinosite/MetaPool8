@@ -272,3 +272,20 @@ background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, F
   margin: 0!important;
   border: none !important;
 }
+@media (max-width:768px){
+  #section1_description_btns{
+    margin: auto;
+    padding-top: 1rem!important ;
+    width: 100% !important;
+  }
+}
+.Section3container{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+nav{
+  z-index: 1000;
+}

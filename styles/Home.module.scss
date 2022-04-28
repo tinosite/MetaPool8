@@ -151,3 +151,63 @@
       height: unset !important;
     }
   }
+  .section1_description{
+    width: 47vw;
+    padding-top:2rem;
+    border-radius:20px;
+    height:45vh;
+    padding:1.2rem;
+  }
+  .section1_description_p1{
+    font-Size:1.8vw;
+    font-Family:Share Tech;
+    color:white;
+  }
+  .section1_description_p2{
+    font-size:1.7vw;
+    margin-top:2rem;
+    font-Family:Share Tech;
+    color:#cfa72d;
+  }
+  .section1_description_THG{
+    font-size:.85rem;
+    font-family:Share Tech;
+    color:white;
+  }
+  .BEP20{
+    margin-Left:.75rem;
+    font-Family:roboto;
+    font-Size:1.2vw;
+    border:1px solid white;
+    color:#BDBABA;
+    width:auto;
+  }
+  .BEP20Address{
+    font-Family:roboto;
+    font-Size:1.2vw;
+    border:1px solid white;
+    color:#BDBABA;
+    width:auto;
+  }
+@media (max-width:768px){
+  .section1_description{
+    width: 80vw;
+    height: auto ;
+    margin: auto;
+  } 
+  .section1_description_p1{
+    font-Size:3.5vw;
+  }
+  .section1_description_p2{
+    font-Size:3vw;
+  }
+  .BEP20,
+  .BEP20Address{
+    font-Size:2.5vw;
+  }
+  .Section1Header{
+    margin: auto;
+    width: 80vw;
+    padding-bottom: 3vh;
+  }
+}

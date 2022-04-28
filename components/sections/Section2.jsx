@@ -39,13 +39,13 @@ export default function Section2() {
 
                                 //Slide1
                                 <Row className={styles.slide1} id="slide1">
-                                    <Col className={styles.slide1image} lg={8} sm={12}>
+                                    <Col className={styles.slide1image} lg={8} sm={12} md={6}>
                                         <img src="/image/anime.png"></img>
                                     </Col>
-                                    <Col className={styles.slide1text} lg={4} sm={12}>
+                                    <Col className={styles.slide1text} lg={4} sm={12} md={6}>
                                         <h3>introduction</h3>
                                         <hr />
-                                        <p>You can choose the planet you want and compete on it. To participate in the race, you have to pay a token according to the desired planet. We have different plans for you so that you can choose the desired planet according to the amount of tokens.
+                                        <p >You can choose the planet you want and compete on it. To participate in the race, you have to pay a token according to the desired planet. We have different plans for you so that you can choose the desired planet according to the amount of tokens.
                                             If you win the match, you will receive tokens from the losing side.  For example, if you participate in the earth match and pay 2x tokens and win, in addition to your own tokens, you will also receive 2x tokens from your opponent.</p>
                                     </Col>
                                 </Row> :
@@ -53,8 +53,8 @@ export default function Section2() {
                                 Slide == 2 ?
 
                                     //Slide2
-                                    <Row className={styles.slide2} id="slide2">
-                                        <Col className={styles.slide2image} lg={8} sm={12}>
+                                    <Row className={styles.slide2_container} id="slide2">
+                                        <Col className={styles.slide2image} lg={8} md={6} sm={12}>
                                             <Row className={styles.firstPlanets}>
                                                 <a href="#" className={styles.venus} id="venus">
                                                     <img src='/image/Venus.png' alt=""></img>
@@ -85,7 +85,7 @@ export default function Section2() {
                                             </Row>
 
                                         </Col>
-                                        <Col className={styles.slide1text} lg={4} sm={12}>
+                                        <Col className={styles.slide1text} lg={4} md={6} sm={12}>
                                             <h3>1 on 1</h3>
                                             <hr />
                                             <p>Welcome to the competitions This section is very exciting because you can earn more money. As in the previous sections, in this section we have considered different designs for you that you can participate in and compete. There will be 4-person and 8-person competitions and the winner of the competition will have all the tokens of his competitors. For example, if you participate in an 8-player tournament, you will receive 8x  tokens by paying x tokens and winning 4 games.</p>
@@ -96,10 +96,10 @@ export default function Section2() {
 
                                         //Slide3
                                         <Row className={styles.slide3} id="slide3">
-                                            <Col className={styles.slide3image} lg={8} sm={12}>
+                                            <Col className={styles.slide3image} lg={8}  md={6} sm={12}>
                                                 <img src="/image/Winner.png"></img>
                                             </Col>
-                                            <Col className={styles.slide1text} lg={4} sm={12}>
+                                            <Col className={styles.slide1text} lg={4}  md={6} sm={12}>
                                                 <h3>Tournament</h3>
                                                 <hr />
                                                 <p>Welcome to the competitions This section is very exciting because you can earn more money. As in the previous sections, in this section we have considered different designs for you that you can participate in and compete. There will be 4-person and 8-person competitions and the winner of the competition will have all the tokens of his competitors. For example, if you participate in an 8-player tournament, you will receive 8x  tokens by paying x tokens and winning 4 games.</p>
@@ -108,13 +108,13 @@ export default function Section2() {
 
                                         //Slide4
                                         <Row className={styles.slide4} id="slide4">
-                                            <Col className={styles.slide4image} lg={8} sm={12}>
+                                            <Col className={styles.slide4image} lg={8}  md={6} sm={12}>
                                                 <img src="/image/Freeplay.png"></img>
                                             </Col>
-                                            <Col className={styles.slide1text} lg={4} sm={12}>
+                                            <Col className={styles.slide1text} lg={4}  md={6} sm={12}>
                                                 <h3>Free Play</h3>
                                                 <hr />
-                                                <p>Stay alive with your friend or be the last man standing. Show your skillsStay alive with your friend or be the last man standing. Show your skillsStay alive with your friend or be the last man standing. Show your skillsStay  alive with your friend   alive with your friend  </p>
+                                                <p className={styles.innder_text}>Stay alive with your friend or be the last man standing. Show your skillsStay alive with your friend or be the last man standing. Show your skillsStay alive with your friend or be the last man standing. Show your skillsStay  alive with your friend   alive with your friend  </p>
                                             </Col>
                                         </Row>
 
@@ -122,18 +122,22 @@ export default function Section2() {
 
                     </Row>
                     <Row className={styles.pageNavigation}>
-                        <Col sm={2} className={styles.section2PreBut}>
+                        <Col xs={2} className={styles.section2PreBut}>
                             <button type="button" onClick={() => setSlide(Slide - 1)}>
                                 Previous
                             </button>
                         </Col>
-                        <Col sm={8} className={styles.slideLine}>
-                            <button type="button" id="slide1Line" onClick={() => slideHandler(1)}></button>
-                            <button type="button" id="slide2Line" onClick={() => slideHandler(2)}></button>
-                            <button type="button" id="slide3Line" onClick={() => slideHandler(3)}></button>
-                            <button type="button" id="slide4Line" onClick={() => slideHandler(4)}></button>
+                        <Col xs={8}  className={styles.slideLine}>
+                            <div className={styles.slideLineAb}>
+                                <Row>
+                                    <button type="button" id="slide1Line" onClick={() => slideHandler(1)}></button>
+                                    <button type="button" id="slide2Line" onClick={() => slideHandler(2)}></button>
+                                    <button type="button" id="slide3Line" onClick={() => slideHandler(3)}></button>
+                                    <button type="button" id="slide4Line" onClick={() => slideHandler(4)}></button>
+                                </Row>
+                            </div>
                         </Col>
-                        <Col sm={2} className={styles.section2NextBut}>
+                        <Col xs={2} className={styles.section2NextBut}>
                             <button type="button" onClick={() => setSlide(Slide + 1)}>
                                 Next
                             </button>

@@ -11,7 +11,7 @@ export default function Section1() {
                     <source src="/first_page_background-c.mp4" type="video/mp4"/>
                 </video>  
                 <Container className={styles.Section1Container}>
-                    <Row >
+                    <Row className={styles.Section1Header}>
                         <Col className="col-2 m-auto" style={{padding:"0 !important",margin:"auto 0 !important",width:"auto !important"}}>
                             <img src="/image/logo.png" style={{position:"relative",height:"10vw",width:"10vw"}}/>
                         </Col>
@@ -22,22 +22,22 @@ export default function Section1() {
                         </Col>
                     </Row>
                     <Row>
-                        <div id="section1_description" style={{  width: "47vw",paddingTop:"2rem",borderRadius:"20px",height:"45vh",padding:"1.2rem"}} glass="true">
-                            <p style={{fontSize:"1.8vw",fontFamily:"Share Tech",color:"white"}}>
+                        <div className={styles.section1_description} glass="true">
+                            <p className={styles.section1_description_p1}>
                             Meta pool is an electronic game based on blockchain technology. You can join game tournaments and compete with other players and earn money.
                             </p>
-                            <p style={{fontSize:"1.7vw",marginTop:"2rem",fontFamily:"Share Tech",color:"#cfa72d"}}>
+                            <p className={styles.section1_description_p2}>
                             #metaverse #NFT #Play_To_Earn #gamefi
                             </p>
-                            {/*<p style={{fontSize:".85",fontFamily:"Share Tech",color:"white"}}>
+                            <p className={styles.section1_description_THG}>
                             $THG Contract Address
                             </p>
                              <Row>
-                                <p style={{marginLeft:".75rem",fontFamily:"roboto",fontSize:"1.2vw",border:"1px solid white",color:"#BDBABA",width:"auto"}}>
+                                <p className={styles.BEP20}>
                                     BEP20</p>
-                                <p style={{fontFamily:"roboto",fontSize:"1.2vw",border:"1px solid white",color:"#BDBABA",width:"auto"}}>
+                                <p className={styles.BEP20Address}>
                                     0x9fd87aefe02441b123c3c32466cd9db4c578618f</p>
-                            </Row> */}
+                            </Row>
                         </div>
                     </Row>
                     <Row id="section1_description_btns" style={{  width: "47vw",justifyContent:"space-between"}} className="row pt-5">
