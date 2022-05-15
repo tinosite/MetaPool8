@@ -1,34 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Nav, Button, Container, NavDropdown, Form, FormControl, Navbar as Nb } from 'react-bootstrap';
 import Link from 'next/link'
-import NavLink  from './NavLink'
+import NavLink from './NavLink'
+import AppContext from '../../AppContext'
 
 export default function Navbar() {
-  const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  const controlNavbar = () => {
-    if (typeof window !== 'undefined') { 
-      if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
-        setShow(false); 
-      } else { // if scroll up show the navbar
-        setShow(true);  
-      }
-      setLastScrollY(window.scrollY); 
-    }
-  };
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
-      return () => {
-        window.removeEventListener('scroll', controlNavbar);
-      };
-    }
-  }, [lastScrollY]);
+  const { header, setheader , show } = React.useContext(AppContext);
 
   return (
-    <Nb expand="md" {...{glass:""}} className={`active ${show && 'hidden'}`}>
+    <Nb expand="md" {...{ glass: "" }} className={`active ${show && 'hidden'}`}>
       <Container fluid>
         <Nb.Toggle aria-controls="navbarScroll" />
         <Nb.Collapse id="navbarScroll">
@@ -39,14 +19,14 @@ export default function Navbar() {
             activeKey="/home"
             onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
           >
-            <Nav.Link href="#Home" className="active">Home</Nav.Link>
-            <Nav.Link href="#GamePlay" className="">GamePlay</Nav.Link>
-            <Nav.Link href="#Section3" className="">Section3</Nav.Link>
-            <Nav.Link href="#Tokenomics" className="">Tokenomics</Nav.Link>
-            <Nav.Link href="#NTF" className="">Metapool coin</Nav.Link>
-            <Nav.Link href="#roadmap" className="">Road map</Nav.Link>
+            <Nav.Link href="#Home" className={header==0?"active":""}>Home</Nav.Link>
+            <Nav.Link href="#GamePlay" className={header==1?"active":""}>GamePlay</Nav.Link>
+            <Nav.Link href="#Section3" className={header==2?"active":""}>Section3</Nav.Link>
+            <Nav.Link href="#Tokenomics" className={header==3?"active":""}>Tokenomics</Nav.Link>
+            <Nav.Link href="#NTF" className={header==4?"active":""}>Metapool coin</Nav.Link>
+            <Nav.Link href="#roadmap" className={header==5?"active":""}>Road map</Nav.Link>
           </Nav>
-      </Nb.Collapse>
+        </Nb.Collapse>
       </Container>
     </Nb>
   )

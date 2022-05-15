@@ -2,8 +2,9 @@ import Image from 'next/image';
 import React from 'react'
 import { Row,Col, Container } from 'react-bootstrap';
 import styles from '../../styles/Home.module.scss'
-
+import AppContext from '../../AppContext'
 export default function Section1() {
+  const {header,setheader} = React.useContext(AppContext)
   return (
         <>    
             <section className={styles.Section1} id="Home">
@@ -11,6 +12,7 @@ export default function Section1() {
                     <source src="/first_page_background-c.mp4" type="video/mp4"/>
                 </video>  
                 <Container className={styles.Section1Container}>
+
                     <Row className={styles.Section1Header}>
                         <Col className="col-2 m-auto" style={{padding:"0 !important",margin:"auto 0 !important",width:"auto !important"}}>
                             <img src="/image/logo.png" style={{position:"relative",height:"10vw",width:"10vw"}}/>
@@ -21,6 +23,7 @@ export default function Section1() {
                             </span>
                         </Col>
                     </Row>
+                    
                     <Row>
                         <div className={styles.section1_description} glass="true">
                             <p className={styles.section1_description_p1}>
@@ -45,6 +48,7 @@ export default function Section1() {
                         <input value="whitepaper" type="button" className="section1-description-btn" style={{borderBottomRightRadius : "3rem",borderTopLeftRadius:"unset !important"}}/>
                     </Row>
                 </Container>
+                
             </section>
         </>
   )

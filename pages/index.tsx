@@ -1,42 +1,64 @@
 import type { NextPage } from 'next'
-import { useRouter } from 'next/router'
+import React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import Section1 from '../components/sections/Section1'
 import Section2 from '../components/sections/Section2'
 import Section3 from '../components/sections/Section3'
 import Section4 from '../components/sections/Section4'
 import Section5 from '../components/sections/Section5'
-let LastChangeTime=0;
-let sectionIndex=0;
+
 import Section6 from '../components/sections/Section6'
+import AppContext from '../AppContext'
+import Navbar from '../components/navbar/navbar'
+import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
-  // var Sections = ["Home", "GamePlay", "Section3","Tokenomics","NTF","roadmap"]
-  // const [scrollY, setScrollY] = useState(0);
-  // LastChangeTime=(new Date()).getTime();
-  // const router = useRouter();
+  const router = useRouter();
+  const SECTIONS = ['#Home', '#GamePlay', '#Section3', '#Tokenomics', '#NTF', '#roadmap'];
+  var start = SECTIONS.indexOf(router.asPath.substr(1));
+  const [header, setheader] = React.useState(0);
 
-  // const getOffsetTop = (element:any):number => {
-  //   if (!element) return 0;
-  //   return getOffsetTop(element.offsetParent) + element.offsetTop;
-  // };
+  var lastChange = new Date().getTime();
 
-  // useEffect(() => {
-  //   const handleScroll = (e:any) => {
-  //     if ((new Date()).getTime() - LastChangeTime > 1000) {
-  //       LastChangeTime=(new Date()).getTime()
-  //       setScrollY(window.scrollY);
-  //       sectionIndex=(++sectionIndex)%Sections.length
+  const listenScrollEvent = (e) => {
+    var s = new Date().getTime();
+    if (!s)
+      s = new Date().getTime();
 
-  //       // router.push(Sections[sectionIndex]);
 
-  //       window.scrollTo(0,getOffsetTop(document.querySelector("#"+Sections[sectionIndex])))
-  //     }
-  //   }
-  //   window.addEventListener("scroll", handleScroll);
-  // }, [scrollY]);
+    if (s - lastChange < 1500)
+      return;
+
+    lastChange = s;
+
+    var delta = e.wheelDelta;
+
+    if (delta > 0) {
+      if (header - 1 < 0) return;
+      // router.push(SECTIONS[header - 1])
+      document.getElementById(SECTIONS[header - 1].substring(1))?.scrollIntoView();
+      setheader(header-1);
+
+    }
+    else {
+      if (header + 1 >= SECTIONS.length) return;
+      // router.push(SECTIONS[header + 1])
+      document.getElementById(SECTIONS[header + 1].substring(1))?.scrollIntoView();
+
+      setheader(header+1);
+    }
+    window.removeEventListener('mousewheel', listenScrollEvent);
+  }
+
+
+  React.useEffect(() => {
+    window.addEventListener('mousewheel', listenScrollEvent);
+  })
+
   return (
-    <>
+    <AppContext.Provider value={{ header: header, setheader: setheader }}>
+      <Navbar />
+
       <Section1></Section1>
       <Section2></Section2>
       <Section3></Section3>
@@ -44,7 +66,7 @@ const Home: NextPage = () => {
       <Section5></Section5>
       <Section6></Section6>
 
-    </>
+    </AppContext.Provider>
   )
 }
 

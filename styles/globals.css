@@ -8,7 +8,7 @@ body {
   background-size: contain;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-
+  overflow: hidden;
 }
 body::-webkit-scrollbar {
   display: none;
