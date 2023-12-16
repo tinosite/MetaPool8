@@ -1,5 +1,5 @@
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-import React, { useRef } from "react";
+import { UseScrollPosition } from '@n8tb1t/use-scroll-position'
+import React, { UseRef } from "react";
 
 function sectionPositionHook(
     boundingRef,
@@ -7,7 +7,7 @@ function sectionPositionHook(
     sectionIndex,
     setSection
 ){
-    useScrollPosition(
+    UseScrollPosition(
         ({prevPos, currPos }) => { //position is top left of the element
             //this logic fires after a scroll event and invokes the prevPos
             //and currPos provided by n8tb1t's hook
@@ -46,13 +46,13 @@ export default function SectionScroller({
   setSection //this is the mutator method we set earlier
 })
 {
-  const scrollerEle = useRef(null);
+  const scrollerEle = UseRef(null);
 
   function renderChildren(){ //THIS function we will use to take over the 
                               //rendering of the child components
       let sectionIndex = 0;
       return React.Children.map(children, child => { //for each child component...
-          const sectionRef = useRef(); // create a ref to this section
+          const sectionRef = UseRef(); // create a ref to this section
 
           let args = { //THESE args pass in refs nessecary for tracking of the section
               boundingRef: scrollerEle,
