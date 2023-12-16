@@ -17,7 +17,7 @@ export default function Navbar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
             activeKey="/home"
-            onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+            // onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
           >
             <Nav.Link href="#Home" className={header==0?"active":""}>Home</Nav.Link>
             <Nav.Link href="#GamePlay" className={header==1?"active":""}>GamePlay</Nav.Link>
