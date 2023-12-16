@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
   var lastChange = new Date().getTime();
 
-  const listenScrollEvent = (e) => {
+  const listenScrollEvent = (e: any) => {
     var s = new Date().getTime();
     if (!s)
       s = new Date().getTime();
